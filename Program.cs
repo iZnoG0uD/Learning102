@@ -2,28 +2,35 @@
 double number1 = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Введите второе число:");
 double number2 = Convert.ToDouble(Console.ReadLine());
+string sight;
 
-char znak;
+Console.WriteLine("Введите знак операции: +, -, *, /, sqrt, ^");
+sight = Console.ReadLine();
 
-Console.WriteLine("Введите знак операции: +, -, *, /");
-znak = Convert.ToChar(Console.ReadLine());
-
-switch (znak)
+switch (sight)
 {
-    case '+':
+    case "+":
         Console.WriteLine("{0} + {1} = {2}", number1, number2, (number1 + number2));
         break;
     
-    case '-':
+    case "-":
         Console.WriteLine("{0} - {1} = {2}", number1, number2, (number1 - number2));
         break;
 
-    case '*':
+    case "*":
         Console.WriteLine("{0} * {1} = {2}", number1, number2, (number1 * number2));
         break;
 
-    case '/':
+    case "/":
         Console.WriteLine("{0} / {1} = {2}", number1, number2, (number1 / number2));
+        break;
+
+    case "sqrt":
+        Console.WriteLine(Math.Sqrt(number1));
+        break;
+
+    case "^":
+        Console.WriteLine($"{number1} ^ {number2} = {Math.Pow(number1, number2)}");
         break;
 
     default:
